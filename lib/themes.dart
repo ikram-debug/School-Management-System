@@ -91,6 +91,5 @@ class CustomTheme {
         fontWeight: FontWeight.w300,
       ),
     ),
-
   );
 }

@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pmdc1/View/Change_Password/Change_Password_View.dart';
 import 'package:pmdc1/View/Home_Screen/Widgets/Home_Card.dart';
 import 'package:pmdc1/View/Home_Screen/Widgets/Student_Data.dart';
+import 'package:pmdc1/View/LMS_Notification/LMS_Notification_View.dart';
 import 'package:pmdc1/View/Login%20Screen/Login_Screen_View.dart';
 import 'package:pmdc1/View/Profile_Screen/Profile_Screen_View.dart';
 import 'package:pmdc1/constant.dart';
@@ -139,28 +140,15 @@ class _HomeScreenViewState extends State<HomeScreenView> {
         color: Colors.grey.shade300,
         child: Column(
           children: [
-            GestureDetector(
-              onTap: (){
-                Navigator.pushNamedAndRemoveUntil(context, ProfileScreenView.routeName,(route)=>true);
-              },
-              child: Container(
-                height: 150,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: kPrimaryColor,
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(kDefaultPadding*2),
-                    bottomLeft: Radius.circular(kDefaultPadding*2),
-                  ),
-                ),
-                padding: EdgeInsets.only(top: 0,left: 10,right: 10,bottom: kDefaultPadding),
-                child: StudentData(
-                    StudentName: 'IKROO DEV',
-                    StudentRollNo: '12',
-                    StudentFiled: 'Pre-Engineering',
-                    StudentPic: 'assets/Profile.jpeg',
-                ),
-              ),
+            StudentData(
+                StudentName: 'IKROO DEV',
+                StudentRollNo: '12',
+                StudentFiled: 'Pre Engineering',
+                StudentPic: 'assets/Profile.jpeg',
+                onpress: () {
+                  Navigator.pushNamedAndRemoveUntil(context,ProfileScreenView.routeName,(route) => true
+                  );
+                }
             ),
             SingleChildScrollView(
               physics: BouncingScrollPhysics(),
@@ -171,7 +159,11 @@ class _HomeScreenViewState extends State<HomeScreenView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
-                      onTap: () {},                      child: Card(
+                      onTap: () {
+                        Navigator.pushNamedAndRemoveUntil(context, LmsNotificationView.routeName, (route) =>true
+                        );
+                      },
+                      child: Card(
                         color: kPrimaryColor,
                         elevation: 10,
                         shadowColor: kPrimaryColor,
@@ -188,6 +180,7 @@ class _HomeScreenViewState extends State<HomeScreenView> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
+
                                   height: 25,
                                   width: double.infinity,
                                   decoration: BoxDecoration(

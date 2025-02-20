@@ -25,29 +25,23 @@ class _ProfileScreenViewState extends State<ProfileScreenView> {
         color: kOtherColor,
         child: Column(
           children: [
-            Container(
-              height: 150,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(kDefaultPadding * 2),
-                  bottomLeft: Radius.circular(kDefaultPadding * 2),
-                ),
-              ),
-              padding: EdgeInsets.only(top: 0,left: 10,right: 10,bottom: kDefaultPadding),
-              child: StudentData(
+            StudentData(
                 StudentName: 'IKROO DEV',
                 StudentRollNo: '12',
-                StudentFiled: 'Pre-Engineering',
+                StudentFiled: 'Pre Engineering',
                 StudentPic: 'assets/Profile.jpeg',
+                onpress: () {}
+            ),
+            Text(
+              'Profile Screen',
+              style: TextStyle(
+                fontSize: 40,
+                color: kTextBlackColor,
               ),
             ),
-
           ],
         ),
       ),
-
     );
   }
 }

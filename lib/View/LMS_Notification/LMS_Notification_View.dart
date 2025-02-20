@@ -3,31 +3,24 @@ import 'package:pmdc1/View/Home_Screen/Widgets/Student_Data.dart';
 import 'package:pmdc1/View/Profile_Screen/Profile_Screen_View.dart';
 import 'package:pmdc1/constant.dart';
 
-class ChangePasswordView extends StatefulWidget {
-  static String routeName = 'ChangePasswordView';
+class LmsNotificationView extends StatefulWidget {
+  static String routeName = 'LmsNotificationView';
 
   @override
-  State<ChangePasswordView> createState() => _ChangePasswordViewState();
+  State<LmsNotificationView> createState() => _LmsNotificationViewState();
 }
 
-class _ChangePasswordViewState extends State<ChangePasswordView> {
+class _LmsNotificationViewState extends State<LmsNotificationView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kPrimaryColor,
-        centerTitle: true,
-        iconTheme: IconThemeData(
-          color: kTextWhiteColor,
-        ),
         title: Text(
           'PMDC',
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+          style: Theme.of(context).textTheme.headlineSmall!.copyWith(
             fontSize: 20,
-            color: kTextWhiteColor,
           ),
         ),
-
       ),
       body: Container(
         color: kOtherColor,
@@ -39,12 +32,12 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                 StudentFiled: 'Pre Engineering',
                 StudentPic: 'assets/Profile.jpeg',
                 onpress: () {
-                  Navigator.pushNamedAndRemoveUntil(context,ProfileScreenView.routeName,(route) => true
+                  Navigator.pushNamedAndRemoveUntil(context, ProfileScreenView.routeName, (route) => true
                   );
                 }
             ),
             Text(
-              'Change password',
+              'LMS Notification Screen',
               style: TextStyle(
                 fontSize: 40,
                 color: kTextBlackColor,
