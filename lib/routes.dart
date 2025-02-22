@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pmdc1/View/Change_Password/Change_Password_View.dart';
+import 'package:pmdc1/View/Courses/Courses_View.dart';
 import 'package:pmdc1/View/Forget_Password_Screen/Forgot_Password_View.dart';
 import 'package:pmdc1/View/Home_Screen/Home_Screen_View.dart';
 import 'package:pmdc1/View/LMS_Notification/LMS_Notification_View.dart';
@@ -16,4 +17,5 @@ Map<String,WidgetBuilder> routes = {
   ChangePasswordView.routeName:(context) => ChangePasswordView(),
   ProfileScreenView.routeName:(context) => ProfileScreenView(),
   LmsNotificationView.routeName:(context) => LmsNotificationView(),
+  CoursesView.routeName:(context) => CoursesView(),
 };

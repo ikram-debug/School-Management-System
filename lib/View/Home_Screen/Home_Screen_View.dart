@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pmdc1/View/Change_Password/Change_Password_View.dart';
+import 'package:pmdc1/View/Courses/Courses_View.dart';
 import 'package:pmdc1/View/Home_Screen/Widgets/Home_Card.dart';
 import 'package:pmdc1/View/Home_Screen/Widgets/Student_Data.dart';
 import 'package:pmdc1/View/LMS_Notification/LMS_Notification_View.dart';
@@ -261,7 +262,10 @@ class _HomeScreenViewState extends State<HomeScreenView> {
                         HomeCard(
                           icon: 'assets/Courses.svg',
                           title: 'courses',
-                          onpress: () {},
+                          onpress: () {
+                            Navigator.pushNamedAndRemoveUntil(context, CoursesView.routeName, (route) => true
+                            );
+                          },
                         ),
                         HomeCard(
                           icon: 'assets/exam.svg',
