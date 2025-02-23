@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pmdc1/Components/Custom_Button2.dart';
-import 'package:pmdc1/Components/Customt_Button1.dart';
 import 'package:pmdc1/View/Home_Screen/Home_Screen_View.dart';
 import 'package:pmdc1/View/Home_Screen/Widgets/Student_Data.dart';
 import 'package:pmdc1/View/Profile_Screen/Profile_Screen_View.dart';
@@ -20,7 +19,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: FocusManager.instance.primaryFocus?.unfocus,
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: kPrimaryColor,

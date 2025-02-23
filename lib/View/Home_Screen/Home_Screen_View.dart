@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pmdc1/View/Change_Password/Change_Password_View.dart';
-import 'package:pmdc1/View/Courses/Courses_View.dart';
+import 'package:pmdc1/Components/Custom_ListTile.dart';
+import 'package:pmdc1/View/Application_Screen/Application_View.dart';
+import 'package:pmdc1/View/Attendence_Screen/Attendence_View.dart';
+import 'package:pmdc1/View/Change_Password_Screen/Change_Password_View.dart';
+import 'package:pmdc1/View/Courses_Screen/Courses_View.dart';
+import 'package:pmdc1/View/Date_Sheet_Screen/Date_Scheet_Screen_View.dart';
+import 'package:pmdc1/View/Examination_Screen/Examination_View.dart';
 import 'package:pmdc1/View/Home_Screen/Widgets/Home_Card.dart';
 import 'package:pmdc1/View/Home_Screen/Widgets/Student_Data.dart';
-import 'package:pmdc1/View/LMS_Notification/LMS_Notification_View.dart';
+import 'package:pmdc1/View/LMS_Notification_Screen/LMS_Notification_View.dart';
 import 'package:pmdc1/View/Login%20Screen/Login_Screen_View.dart';
 import 'package:pmdc1/View/Profile_Screen/Profile_Screen_View.dart';
+import 'package:pmdc1/View/Quries_Screen/Quries_Screen_View.dart';
+import 'package:pmdc1/View/Time_Table_Screen/Time_Table_View.dart';
 import 'package:pmdc1/constant.dart';
 import 'package:sizer/sizer.dart';
 
@@ -60,67 +66,76 @@ class _HomeScreenViewState extends State<HomeScreenView> {
                 ),
               ),
             ),
-            ListTile(
-              leading: Icon(Icons.dashboard,
-                  size: 15,
-                  color: kTextWhiteColor
-              ),
-              minLeadingWidth: 40,
-              title: Text(
-                'Dashboard',
-                style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                  fontSize: 14,
-                  color: kTextWhiteColor,
-                ),
-              ),
-              onTap: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context, HomeScreenView.routeName, (route) => false);
-              },
+            CustomListTile(
+                icon: Icons.dashboard,
+                text: 'DashBoard',
+                onTap: () {
+                  Navigator.pushNamedAndRemoveUntil(context, HomeScreenView.routeName, (route) => false
+                  );
+                }
+            ),
+            CustomListTile(
+                icon: Icons.notifications,
+                text: 'SMS Notification',
+                onTap: () {}
+            ),
+            CustomListTile(
+                icon: Icons.notifications_on_sharp,
+                text: 'LMS Notification',
+                onTap: () {
+                  Navigator.pushNamedAndRemoveUntil(context,LmsNotificationView.routeName, (route) => true
+                  );
+                }
+            ),
+            CustomListTile(
+                icon: Icons.person,
+                text: 'My Samestar',
+                onTap: () {}
+            ),
+            CustomListTile(
+                icon: Icons.receipt_long,
+                text: 'Fee & Finance',
+                onTap: () {}
+            ),
+            CustomListTile(
+                icon: Icons.file_copy,
+                text: 'Forms',
+                onTap: () {}
+            ),
+            CustomListTile(
+                icon: Icons.explicit,
+                text: 'Examination',
+                onTap: () {}
+            ),
+            CustomListTile(
+                icon: Icons.question_answer_sharp,
+                text: 'Application',
+                onTap: () {}
+            ),
+            CustomListTile(
+                icon: Icons.menu_book,
+                text: 'Student HandBook',
+                onTap: () {}
             ),
             Divider(
                 color: kTextWhiteColor,
                 thickness: 0.5
             ),
-            ListTile(
-              leading: Icon(
-                  Icons.key,
-                  size: 15,
-                  color: kTextWhiteColor
-              ),
-              minLeadingWidth: 40,
-              title: Text(
-                'Change Password',
-                style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                  fontSize: 14,
-                  color: kTextWhiteColor,
-                ),
-              ),
-              onTap: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context,
-                    ChangePasswordView.routeName,
-                        (route) => true
-                );
-              },
+            CustomListTile(
+                icon: Icons.key,
+                text: 'Change Password',
+                onTap: () {
+                  Navigator.pushNamedAndRemoveUntil(context, ChangePasswordView.routeName, (route) => true
+                  );
+                }
             ),
-            ListTile(
-              leading: Icon(Icons.logout,
-                  size: 15,
-                  color: kTextWhiteColor
-              ),
-              minLeadingWidth: 40,
-              title: Text(
-                'Sign Out',
-                style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                  fontSize: 14,
-                  color: kTextWhiteColor,
-                ),
-              ),
-              onTap: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context, LoginScreenView.routesName, (route) => false);
-              },
+            CustomListTile(
+                icon: Icons.logout,
+                text: 'Sign Out',
+                onTap: () {
+                  Navigator.pushNamedAndRemoveUntil(context, LoginScreenView.routesName, (route) => false
+                  );
+                }
             ),
           ],
         ),
@@ -181,7 +196,6 @@ class _HomeScreenViewState extends State<HomeScreenView> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-
                                   height: 25,
                                   width: double.infinity,
                                   decoration: BoxDecoration(
@@ -239,17 +253,26 @@ class _HomeScreenViewState extends State<HomeScreenView> {
                         HomeCard(
                             icon: 'assets/timetable.svg',
                             title: 'Time Table',
-                            onpress: () {},
+                            onpress: () {
+                              Navigator.pushNamedAndRemoveUntil(context, TimeTableView.routeName, (route) => true
+                              );
+                            },
                         ),
                         HomeCard(
                             icon: 'assets/Attendence.svg',
                             title: 'Attendence',
-                          onpress: () {},
+                          onpress: () {
+                              Navigator.pushNamedAndRemoveUntil(context, AttendenceView.routeName, (route) => true
+                              );
+                          },
                         ),
                         HomeCard(
                             icon: 'assets/Application.svg',
                             title: 'Applications',
-                            onpress: () {},
+                            onpress: () {
+                              Navigator.pushNamedAndRemoveUntil(context, ApplicationView.routeName, (route) => true
+                              );
+                            },
                         )
                       ],
                     ),
@@ -270,12 +293,18 @@ class _HomeScreenViewState extends State<HomeScreenView> {
                         HomeCard(
                           icon: 'assets/exam.svg',
                           title: 'Examination',
-                          onpress: () {},
+                          onpress: () {
+                            Navigator.pushNamedAndRemoveUntil(context, ExaminationView.routeName, (route) => true
+                            );
+                          },
                         ),
                         HomeCard(
                           icon: 'assets/datesheet.svg',
                           title: 'DateSheet',
-                          onpress: () {},
+                          onpress: () {
+                            Navigator.pushNamedAndRemoveUntil(context, DateScheetScreenView.routeName, (route) =>true
+                            );
+                          },
                         )
                       ],
                     ),
@@ -288,17 +317,26 @@ class _HomeScreenViewState extends State<HomeScreenView> {
                         HomeCard(
                           icon: 'assets/resume.svg',
                           title: 'Quries',
-                          onpress: () {},
+                          onpress: () {
+                            Navigator.pushNamedAndRemoveUntil(context, QuriesScreenView.routeName, (route) => true
+                            );
+                          },
                         ),
                         HomeCard(
                           icon: 'assets/fee.svg',
                           title: 'Fee Record',
-                          onpress: () {},
+                          onpress: () {
+                            Navigator.pushNamedAndRemoveUntil(context, QuriesScreenView.routeName, (route) => true
+                            );
+                          },
                         ),
                         HomeCard(
                           icon: 'assets/logout.svg',
                           title: 'Sign Out',
-                          onpress: () {},
+                          onpress: () {
+                            Navigator.pushNamedAndRemoveUntil(context, LoginScreenView.routesName, (route) => true
+                            );
+                          },
                         )
                       ],
                     ),

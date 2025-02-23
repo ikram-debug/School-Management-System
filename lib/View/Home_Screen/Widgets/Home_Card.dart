@@ -20,7 +20,7 @@ class HomeCard extends StatelessWidget {
       onTap: onpress,
       child: Card(
         color: kPrimaryColor,
-        elevation: 10,
+        elevation: 5,
         shadowColor: kPrimaryColor,
         shape: BeveledRectangleBorder(
             borderRadius: BorderRadius.circular(2)

@@ -38,7 +38,7 @@ final VoidCallback onpress;
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'WelCome Back,',
+                  'Welcome back!',
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(
                     fontSize: 14,
                     color: kTextWhiteColor,

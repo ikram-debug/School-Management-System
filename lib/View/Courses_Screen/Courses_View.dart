@@ -42,6 +42,24 @@ class _CoursesViewState extends State<CoursesView> {
                   );
                 }
             ),
+            Expanded(
+                child: SingleChildScrollView(
+                  child: Padding(
+                      padding:EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Courses Screen',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: kTextBlackColor,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+            ),
           ],
         ),
       )
