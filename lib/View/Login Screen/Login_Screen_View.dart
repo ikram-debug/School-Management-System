@@ -31,69 +31,7 @@ class _LoginScreenViewState extends State<LoginScreenView> {
       child: Scaffold(
         body: Column(
           children: [
-            Container(
-              width: 100.w,
-              height: 40.h,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    child: Image.asset(
-                      'assets/Logo.png',
-                      color: kTextWhiteColor,
-                    ),
-                    height: 150,
-                    width: 150,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Hi',
-                        style: Theme
-                            .of(context)
-                            .textTheme
-                            .bodySmall!
-                            .copyWith(
-                          fontSize: 30,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        'Student',
-                        style: Theme
-                            .of(context)
-                            .textTheme
-                            .bodyLarge!
-                            .copyWith(
-                            fontSize: 30
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    'Sign in to continue',
-                    style: Theme
-                        .of(context)
-                        .textTheme
-                        .titleSmall!
-                        .copyWith(
-                      color: kTextWhiteColor,
-                      fontSize: 16,
-                    ),
-                  )
-                ],
-              ),
-            ),
+            IntrobuildContainer(context),
             Expanded(
               child: Container(
                 padding: EdgeInsets.only(top: 30,left: 30,right: 30),
@@ -110,50 +48,50 @@ class _LoginScreenViewState extends State<LoginScreenView> {
                         buildIDTextFormField(),
                         sizedBox,
                         buildPasswordTextFormField(),
-                       SizedBox(
-                         height: 10,
-                       ),
-                       Align(
-                         alignment: Alignment.bottomRight,
-                         child: CustomInkWellButton(
-                             text: 'Forgot Password?',
-                             onPressed:() {
-                               Navigator.pushNamedAndRemoveUntil(context, ForgotPasswordView.routeName, (route) =>true);
-                             },
-                           fontsize: 14,
-                         ),
-                       ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: CustomInkWellButton(
+                            text: 'Forgot Password?',
+                            onPressed:() {
+                              Navigator.pushNamedAndRemoveUntil(context, ForgotPasswordView.routeName, (route) =>true);
+                            },
+                            fontsize: 14,
+                          ),
+                        ),
                         sizedBox,
                         DefaultButton(
-                            onPress: () {if (_formkey.currentState!.validate()) {
-                              Navigator.pushNamedAndRemoveUntil(context,
-                                  HomeScreenView.routeName, (route) => false);
-                              }
-                            },
-                            title: 'Login',
+                          onPress: () {if (_formkey.currentState!.validate()) {
+                            Navigator.pushNamedAndRemoveUntil(context,
+                                HomeScreenView.routeName, (route) => false);
+                          }
+                          },
+                          title: 'Login',
                         ),
                         sizedBox,
                         Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'For any query email us at',
-                                style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                                  fontSize: 12,
-                                  color: kPrimaryColor,
+                            alignment: Alignment.bottomLeft,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'For any query email us at',
+                                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                    fontSize: 12,
+                                    color: kPrimaryColor,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                'info@pmdc.edu.pk ',
-                                style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                                  fontSize: 12,
-                                  color: kTextBlackColor,
+                                Text(
+                                  'info@pmdc.edu.pk ',
+                                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                    fontSize: 12,
+                                    color: kTextBlackColor,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          )
+                              ],
+                            )
                         )
                       ],
                     ),
@@ -165,6 +103,72 @@ class _LoginScreenViewState extends State<LoginScreenView> {
         ),
       ),
     );
+  }
+
+  Container IntrobuildContainer(BuildContext context) {
+    return Container(
+            width: 100.w,
+            height: 40.h,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  child: Image.asset(
+                    'assets/Logo.png',
+                    color: kTextWhiteColor,
+                  ),
+                  height: 150,
+                  width: 150,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Hi',
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .bodySmall!
+                          .copyWith(
+                        fontSize: 30,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      'Student',
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .bodyLarge!
+                          .copyWith(
+                          fontSize: 30
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'Sign in to continue',
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .titleSmall!
+                      .copyWith(
+                    color: kTextWhiteColor,
+                    fontSize: 16,
+                  ),
+                )
+              ],
+            ),
+          );
   }
 
   TextFormField buildPasswordTextFormField() {
@@ -224,4 +228,3 @@ class _LoginScreenViewState extends State<LoginScreenView> {
     );
   }
 }
-

@@ -5,12 +5,14 @@ class CustomListTile extends StatelessWidget {
   final IconData icon;
   final String text;
   final VoidCallback onTap;
+  final double sizebox;
 
   const CustomListTile({
     Key? key,
     required this.icon,
     required this.text,
     required this.onTap,
+    required this.sizebox
   }) : super(key: key);
 
   @override
@@ -21,7 +23,7 @@ class CustomListTile extends StatelessWidget {
         size: 15,
         color: kTextWhiteColor,
       ),
-      minLeadingWidth: 40,
+      minLeadingWidth: sizebox,
       title: Text(
         text,
         style: Theme.of(context).textTheme.bodySmall!.copyWith(

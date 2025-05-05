@@ -11,6 +11,7 @@ class CustomContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mq = MediaQuery.of(context).size;
     return Container(
         width: double.infinity,
         color: kTextWhiteColor,
@@ -23,7 +24,7 @@ class CustomContainer extends StatelessWidget {
               style: Theme.of(context).textTheme.bodySmall!.copyWith(
                   color: kTextLightColor,
                   fontWeight: FontWeight.w600,
-                  fontSize: 14
+                  fontSize:  14// mq.height * .7
               ),
             ),
             SizedBox(

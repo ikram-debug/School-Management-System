@@ -125,7 +125,7 @@ class _ProfileScreenViewState extends State<ProfileScreenView> {
                       ),
                       CustomContainer(
                         title: 'Current Session :',
-                        title1: 'Ikroodev.x360@gmail.com',
+                        title1: '2024',
                       ),
                       SizedBox(
                         height: 10,
