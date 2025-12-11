@@ -161,8 +161,8 @@ class _ApplicationViewState extends State<ApplicationView> {
                           ),
                           DefaultButton(
                               onPress: () { if(_formkey.currentState!.validate()) {
-                                Navigator.pushNamedAndRemoveUntil(context, HomeScreenView.routeName, (route) => true
-                                );
+                                // Navigator.pushNamedAndRemoveUntil(context, HomeScreenView.routeName, (route) => true
+                                // );
                               }
                               },
                               title: "Submit",
